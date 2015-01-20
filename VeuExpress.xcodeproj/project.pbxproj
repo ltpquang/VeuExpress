@@ -7,13 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		435F76C612C0F40B48D0D136 /* libPods-VeuExpress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ABD0AC053312EDB7300B4B7 /* libPods-VeuExpress.a */; };
+		6F0D89DA1A6042B200B99D36 /* PQUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0D89D91A6042B200B99D36 /* PQUser.m */; };
+		6F0D89DD1A6044CA00B99D36 /* PQThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0D89DC1A6044CA00B99D36 /* PQThread.m */; };
+		6F3CB8601A6E015D005812D5 /* PQReplyTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3CB85F1A6E015D005812D5 /* PQReplyTicketViewController.m */; };
+		6F3E42021A2B8A8800D13674 /* PQTicketListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3E42011A2B8A8800D13674 /* PQTicketListViewController.m */; };
+		6F574A041A2C2A9E003FF8EF /* PQRequestingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F574A031A2C2A9E003FF8EF /* PQRequestingService.m */; };
+		6F574A071A2C2D3B003FF8EF /* PQParsingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F574A061A2C2D3B003FF8EF /* PQParsingService.m */; };
+		6F592F201A2A518000569033 /* PQLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F592F1F1A2A518000569033 /* PQLoginViewController.m */; };
+		6F725FBC1A659FA70021A228 /* PQTicketDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F725FBB1A659FA70021A228 /* PQTicketDetailViewController.m */; };
+		6F9E9F631A6A56E400EA57B0 /* PQWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E9F621A6A56E400EA57B0 /* PQWebViewViewController.m */; };
 		6FA712511A275C4D00D97F7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA712501A275C4D00D97F7D /* main.m */; };
 		6FA712541A275C4D00D97F7D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA712531A275C4D00D97F7D /* AppDelegate.m */; };
-		6FA712571A275C4D00D97F7D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA712561A275C4D00D97F7D /* ViewController.m */; };
 		6FA7125A1A275C4D00D97F7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FA712581A275C4D00D97F7D /* Main.storyboard */; };
 		6FA7125C1A275C4D00D97F7D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FA7125B1A275C4D00D97F7D /* Images.xcassets */; };
 		6FA7125F1A275C4D00D97F7D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FA7125D1A275C4D00D97F7D /* LaunchScreen.xib */; };
 		6FA7126B1A275C4D00D97F7D /* VeuExpressTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA7126A1A275C4D00D97F7D /* VeuExpressTests.m */; };
+		6FB1F43E1A2851F6009763EC /* PQTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB1F43D1A2851F6009763EC /* PQTicket.m */; };
+		6FB1F4451A2852A3009763EC /* PQAuthenticatingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB1F4441A2852A3009763EC /* PQAuthenticatingService.m */; };
+		6FB1F4481A285518009763EC /* PQURLService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB1F4471A285518009763EC /* PQURLService.m */; };
+		6FB1F4501A2858E2009763EC /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB1F44B1A2858E2009763EC /* TFHpple.m */; };
+		6FB1F4511A2858E2009763EC /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB1F44D1A2858E2009763EC /* TFHppleElement.m */; };
+		6FB1F4521A2858E2009763EC /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB1F44F1A2858E2009763EC /* XPathQuery.m */; };
+		6FB1F4561A285976009763EC /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB1F4541A285976009763EC /* libxml2.dylib */; };
+		6FCC04791A5ABD3A007D321E /* PQTicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCC04781A5ABD3A007D321E /* PQTicketCell.m */; };
+		6FD69E8E1A6B4EBE0066A908 /* PQConversationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD69E8D1A6B4EBD0066A908 /* PQConversationDetailViewController.m */; };
+		6FD69E911A6B51620066A908 /* PQThreadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FD69E901A6B51620066A908 /* PQThreadTableViewCell.xib */; };
+		6FD69E941A6B52CC0066A908 /* PQThreadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD69E931A6B52CC0066A908 /* PQThreadTableViewCell.m */; };
+		6FF7AD3E1A2DBEF600F35375 /* PQTicketTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF7AD3D1A2DBEF600F35375 /* PQTicketTableViewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +48,62 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4ABD0AC053312EDB7300B4B7 /* libPods-VeuExpress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VeuExpress.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		625E868E39B49BF14423AF2C /* Pods-VeuExpress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeuExpress.release.xcconfig"; path = "Pods/Target Support Files/Pods-VeuExpress/Pods-VeuExpress.release.xcconfig"; sourceTree = "<group>"; };
+		6F0D89D81A6042B200B99D36 /* PQUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQUser.h; path = Model/PQUser.h; sourceTree = "<group>"; };
+		6F0D89D91A6042B200B99D36 /* PQUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQUser.m; path = Model/PQUser.m; sourceTree = "<group>"; };
+		6F0D89DB1A6044CA00B99D36 /* PQThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQThread.h; path = Model/PQThread.h; sourceTree = "<group>"; };
+		6F0D89DC1A6044CA00B99D36 /* PQThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQThread.m; path = Model/PQThread.m; sourceTree = "<group>"; };
+		6F3CB85E1A6E015D005812D5 /* PQReplyTicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQReplyTicketViewController.h; path = Controller/PQReplyTicketViewController.h; sourceTree = "<group>"; };
+		6F3CB85F1A6E015D005812D5 /* PQReplyTicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQReplyTicketViewController.m; path = Controller/PQReplyTicketViewController.m; sourceTree = "<group>"; };
+		6F3E42001A2B8A8800D13674 /* PQTicketListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQTicketListViewController.h; path = Controller/PQTicketListViewController.h; sourceTree = "<group>"; };
+		6F3E42011A2B8A8800D13674 /* PQTicketListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQTicketListViewController.m; path = Controller/PQTicketListViewController.m; sourceTree = "<group>"; };
+		6F574A021A2C2A9E003FF8EF /* PQRequestingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQRequestingService.h; path = Model/PQRequestingService.h; sourceTree = "<group>"; };
+		6F574A031A2C2A9E003FF8EF /* PQRequestingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQRequestingService.m; path = Model/PQRequestingService.m; sourceTree = "<group>"; };
+		6F574A051A2C2D3B003FF8EF /* PQParsingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQParsingService.h; path = Model/PQParsingService.h; sourceTree = "<group>"; };
+		6F574A061A2C2D3B003FF8EF /* PQParsingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQParsingService.m; path = Model/PQParsingService.m; sourceTree = "<group>"; };
+		6F592F1E1A2A518000569033 /* PQLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQLoginViewController.h; path = Controller/PQLoginViewController.h; sourceTree = "<group>"; };
+		6F592F1F1A2A518000569033 /* PQLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQLoginViewController.m; path = Controller/PQLoginViewController.m; sourceTree = "<group>"; };
+		6F725FBA1A659FA70021A228 /* PQTicketDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQTicketDetailViewController.h; path = Controller/PQTicketDetailViewController.h; sourceTree = "<group>"; };
+		6F725FBB1A659FA70021A228 /* PQTicketDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQTicketDetailViewController.m; path = Controller/PQTicketDetailViewController.m; sourceTree = "<group>"; };
+		6F80B4001A59A240002E1C9E /* TicketViewTypeEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TicketViewTypeEnum.h; path = Model/TicketViewTypeEnum.h; sourceTree = "<group>"; };
+		6F9E9F611A6A56E400EA57B0 /* PQWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQWebViewViewController.h; path = Controller/PQWebViewViewController.h; sourceTree = "<group>"; };
+		6F9E9F621A6A56E400EA57B0 /* PQWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQWebViewViewController.m; path = Controller/PQWebViewViewController.m; sourceTree = "<group>"; };
 		6FA7124B1A275C4D00D97F7D /* VeuExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeuExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA7124F1A275C4D00D97F7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FA712501A275C4D00D97F7D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6FA712521A275C4D00D97F7D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6FA712531A275C4D00D97F7D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6FA712551A275C4D00D97F7D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6FA712561A275C4D00D97F7D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6FA712591A275C4D00D97F7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6FA7125B1A275C4D00D97F7D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6FA7125E1A275C4D00D97F7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6FA712641A275C4D00D97F7D /* VeuExpressTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VeuExpressTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA712691A275C4D00D97F7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FA7126A1A275C4D00D97F7D /* VeuExpressTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VeuExpressTests.m; sourceTree = "<group>"; };
+		6FB1F43C1A2851F6009763EC /* PQTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQTicket.h; path = Model/PQTicket.h; sourceTree = "<group>"; };
+		6FB1F43D1A2851F6009763EC /* PQTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQTicket.m; path = Model/PQTicket.m; sourceTree = "<group>"; };
+		6FB1F4431A2852A3009763EC /* PQAuthenticatingService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQAuthenticatingService.h; path = Model/PQAuthenticatingService.h; sourceTree = "<group>"; };
+		6FB1F4441A2852A3009763EC /* PQAuthenticatingService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQAuthenticatingService.m; path = Model/PQAuthenticatingService.m; sourceTree = "<group>"; };
+		6FB1F4461A285518009763EC /* PQURLService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQURLService.h; path = Model/PQURLService.h; sourceTree = "<group>"; };
+		6FB1F4471A285518009763EC /* PQURLService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQURLService.m; path = Model/PQURLService.m; sourceTree = "<group>"; };
+		6FB1F44A1A2858E2009763EC /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		6FB1F44B1A2858E2009763EC /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		6FB1F44C1A2858E2009763EC /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		6FB1F44D1A2858E2009763EC /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		6FB1F44E1A2858E2009763EC /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		6FB1F44F1A2858E2009763EC /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		6FB1F4531A285976009763EC /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		6FB1F4541A285976009763EC /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		6FCC04771A5ABD3A007D321E /* PQTicketCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQTicketCell.h; path = Controller/PQTicketCell.h; sourceTree = "<group>"; };
+		6FCC04781A5ABD3A007D321E /* PQTicketCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQTicketCell.m; path = Controller/PQTicketCell.m; sourceTree = "<group>"; };
+		6FD69E8C1A6B4EBD0066A908 /* PQConversationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQConversationDetailViewController.h; path = Controller/PQConversationDetailViewController.h; sourceTree = "<group>"; };
+		6FD69E8D1A6B4EBD0066A908 /* PQConversationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQConversationDetailViewController.m; path = Controller/PQConversationDetailViewController.m; sourceTree = "<group>"; };
+		6FD69E901A6B51620066A908 /* PQThreadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PQThreadTableViewCell.xib; path = View/PQThreadTableViewCell.xib; sourceTree = "<group>"; };
+		6FD69E921A6B52CC0066A908 /* PQThreadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQThreadTableViewCell.h; path = Controller/PQThreadTableViewCell.h; sourceTree = "<group>"; };
+		6FD69E931A6B52CC0066A908 /* PQThreadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQThreadTableViewCell.m; path = Controller/PQThreadTableViewCell.m; sourceTree = "<group>"; };
+		6FF7AD3C1A2DBEF600F35375 /* PQTicketTableViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQTicketTableViewViewController.h; path = Controller/PQTicketTableViewViewController.h; sourceTree = "<group>"; };
+		6FF7AD3D1A2DBEF600F35375 /* PQTicketTableViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQTicketTableViewViewController.m; path = Controller/PQTicketTableViewViewController.m; sourceTree = "<group>"; };
+		9E0F22BBAFE1753A1D34B838 /* Pods-VeuExpress.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeuExpress.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VeuExpress/Pods-VeuExpress.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FB1F4561A285976009763EC /* libxml2.dylib in Frameworks */,
+				435F76C612C0F40B48D0D136 /* libPods-VeuExpress.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +126,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F592F1D1A2A515100569033 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6F592F1E1A2A518000569033 /* PQLoginViewController.h */,
+				6F592F1F1A2A518000569033 /* PQLoginViewController.m */,
+				6F3E42001A2B8A8800D13674 /* PQTicketListViewController.h */,
+				6F3E42011A2B8A8800D13674 /* PQTicketListViewController.m */,
+				6FF7AD3C1A2DBEF600F35375 /* PQTicketTableViewViewController.h */,
+				6FF7AD3D1A2DBEF600F35375 /* PQTicketTableViewViewController.m */,
+				6FCC04771A5ABD3A007D321E /* PQTicketCell.h */,
+				6FCC04781A5ABD3A007D321E /* PQTicketCell.m */,
+				6F725FBA1A659FA70021A228 /* PQTicketDetailViewController.h */,
+				6F725FBB1A659FA70021A228 /* PQTicketDetailViewController.m */,
+				6F9E9F611A6A56E400EA57B0 /* PQWebViewViewController.h */,
+				6F9E9F621A6A56E400EA57B0 /* PQWebViewViewController.m */,
+				6FD69E8C1A6B4EBD0066A908 /* PQConversationDetailViewController.h */,
+				6FD69E8D1A6B4EBD0066A908 /* PQConversationDetailViewController.m */,
+				6FD69E921A6B52CC0066A908 /* PQThreadTableViewCell.h */,
+				6FD69E931A6B52CC0066A908 /* PQThreadTableViewCell.m */,
+				6F3CB85E1A6E015D005812D5 /* PQReplyTicketViewController.h */,
+				6F3CB85F1A6E015D005812D5 /* PQReplyTicketViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		6FA712421A275C4D00D97F7D = {
 			isa = PBXGroup;
 			children = (
 				6FA7124D1A275C4D00D97F7D /* VeuExpress */,
 				6FA712671A275C4D00D97F7D /* VeuExpressTests */,
 				6FA7124C1A275C4D00D97F7D /* Products */,
+				96A59494EF2EE0D3B354A71C /* Pods */,
+				E9E63FB90EE87CAB9F03CF17 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,11 +174,11 @@
 		6FA7124D1A275C4D00D97F7D /* VeuExpress */ = {
 			isa = PBXGroup;
 			children = (
+				6FD69E8F1A6B510C0066A908 /* View */,
+				6F592F1D1A2A515100569033 /* Controller */,
+				6FB1F43F1A28522C009763EC /* Model */,
 				6FA712521A275C4D00D97F7D /* AppDelegate.h */,
 				6FA712531A275C4D00D97F7D /* AppDelegate.m */,
-				6FA712551A275C4D00D97F7D /* ViewController.h */,
-				6FA712561A275C4D00D97F7D /* ViewController.m */,
-				6FA712581A275C4D00D97F7D /* Main.storyboard */,
 				6FA7125B1A275C4D00D97F7D /* Images.xcassets */,
 				6FA7125D1A275C4D00D97F7D /* LaunchScreen.xib */,
 				6FA7124E1A275C4D00D97F7D /* Supporting Files */,
@@ -119,6 +212,70 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6FB1F43F1A28522C009763EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6F80B4001A59A240002E1C9E /* TicketViewTypeEnum.h */,
+				6FB1F43C1A2851F6009763EC /* PQTicket.h */,
+				6FB1F43D1A2851F6009763EC /* PQTicket.m */,
+				6F0D89D81A6042B200B99D36 /* PQUser.h */,
+				6F0D89D91A6042B200B99D36 /* PQUser.m */,
+				6F0D89DB1A6044CA00B99D36 /* PQThread.h */,
+				6F0D89DC1A6044CA00B99D36 /* PQThread.m */,
+				6FB1F4431A2852A3009763EC /* PQAuthenticatingService.h */,
+				6FB1F4441A2852A3009763EC /* PQAuthenticatingService.m */,
+				6FB1F4461A285518009763EC /* PQURLService.h */,
+				6FB1F4471A285518009763EC /* PQURLService.m */,
+				6F574A021A2C2A9E003FF8EF /* PQRequestingService.h */,
+				6F574A031A2C2A9E003FF8EF /* PQRequestingService.m */,
+				6F574A051A2C2D3B003FF8EF /* PQParsingService.h */,
+				6F574A061A2C2D3B003FF8EF /* PQParsingService.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6FB1F4491A2858BB009763EC /* Hpple */ = {
+			isa = PBXGroup;
+			children = (
+				6FB1F44A1A2858E2009763EC /* TFHpple.h */,
+				6FB1F44B1A2858E2009763EC /* TFHpple.m */,
+				6FB1F44C1A2858E2009763EC /* TFHppleElement.h */,
+				6FB1F44D1A2858E2009763EC /* TFHppleElement.m */,
+				6FB1F44E1A2858E2009763EC /* XPathQuery.h */,
+				6FB1F44F1A2858E2009763EC /* XPathQuery.m */,
+			);
+			name = Hpple;
+			sourceTree = "<group>";
+		};
+		6FD69E8F1A6B510C0066A908 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6FA712581A275C4D00D97F7D /* Main.storyboard */,
+				6FD69E901A6B51620066A908 /* PQThreadTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		96A59494EF2EE0D3B354A71C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E0F22BBAFE1753A1D34B838 /* Pods-VeuExpress.debug.xcconfig */,
+				625E868E39B49BF14423AF2C /* Pods-VeuExpress.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E9E63FB90EE87CAB9F03CF17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6FB1F4531A285976009763EC /* libxml2.2.dylib */,
+				6FB1F4541A285976009763EC /* libxml2.dylib */,
+				6FB1F4491A2858BB009763EC /* Hpple */,
+				4ABD0AC053312EDB7300B4B7 /* libPods-VeuExpress.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +283,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6FA7126E1A275C4D00D97F7D /* Build configuration list for PBXNativeTarget "VeuExpress" */;
 			buildPhases = (
+				CD06E1B0A5E43F5B88DBE713 /* Check Pods Manifest.lock */,
 				6FA712471A275C4D00D97F7D /* Sources */,
 				6FA712481A275C4D00D97F7D /* Frameworks */,
 				6FA712491A275C4D00D97F7D /* Resources */,
+				07435B610940F2C004DEA604 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,6 +327,7 @@
 				TargetAttributes = {
 					6FA7124A1A275C4D00D97F7D = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 4632F27GCZ;
 					};
 					6FA712631A275C4D00D97F7D = {
 						CreatedOnToolsVersion = 6.1;
@@ -199,6 +359,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FD69E911A6B51620066A908 /* PQThreadTableViewCell.xib in Resources */,
 				6FA7125A1A275C4D00D97F7D /* Main.storyboard in Resources */,
 				6FA7125F1A275C4D00D97F7D /* LaunchScreen.xib in Resources */,
 				6FA7125C1A275C4D00D97F7D /* Images.xcassets in Resources */,
@@ -214,14 +375,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		07435B610940F2C004DEA604 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VeuExpress/Pods-VeuExpress-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD06E1B0A5E43F5B88DBE713 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6FA712471A275C4D00D97F7D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FA712571A275C4D00D97F7D /* ViewController.m in Sources */,
+				6FB1F4511A2858E2009763EC /* TFHppleElement.m in Sources */,
+				6FB1F4451A2852A3009763EC /* PQAuthenticatingService.m in Sources */,
+				6F0D89DD1A6044CA00B99D36 /* PQThread.m in Sources */,
+				6FD69E8E1A6B4EBE0066A908 /* PQConversationDetailViewController.m in Sources */,
+				6F0D89DA1A6042B200B99D36 /* PQUser.m in Sources */,
+				6F3CB8601A6E015D005812D5 /* PQReplyTicketViewController.m in Sources */,
 				6FA712541A275C4D00D97F7D /* AppDelegate.m in Sources */,
+				6FF7AD3E1A2DBEF600F35375 /* PQTicketTableViewViewController.m in Sources */,
+				6FB1F4521A2858E2009763EC /* XPathQuery.m in Sources */,
+				6FB1F4501A2858E2009763EC /* TFHpple.m in Sources */,
+				6FCC04791A5ABD3A007D321E /* PQTicketCell.m in Sources */,
+				6F9E9F631A6A56E400EA57B0 /* PQWebViewViewController.m in Sources */,
+				6F574A041A2C2A9E003FF8EF /* PQRequestingService.m in Sources */,
 				6FA712511A275C4D00D97F7D /* main.m in Sources */,
+				6F574A071A2C2D3B003FF8EF /* PQParsingService.m in Sources */,
+				6FD69E941A6B52CC0066A908 /* PQThreadTableViewCell.m in Sources */,
+				6F592F201A2A518000569033 /* PQLoginViewController.m in Sources */,
+				6FB1F4481A285518009763EC /* PQURLService.m in Sources */,
+				6F725FBC1A659FA70021A228 /* PQTicketDetailViewController.m in Sources */,
+				6FB1F43E1A2851F6009763EC /* PQTicket.m in Sources */,
+				6F3E42021A2B8A8800D13674 /* PQTicketListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,21 +555,39 @@
 		};
 		6FA7126F1A275C4D00D97F7D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E0F22BBAFE1753A1D34B838 /* Pods-VeuExpress.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = VeuExpress/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		6FA712701A275C4D00D97F7D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 625E868E39B49BF14423AF2C /* Pods-VeuExpress.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = VeuExpress/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -414,6 +644,7 @@
 				6FA712701A275C4D00D97F7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6FA712711A275C4D00D97F7D /* Build configuration list for PBXNativeTarget "VeuExpressTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +653,7 @@
 				6FA712731A275C4D00D97F7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

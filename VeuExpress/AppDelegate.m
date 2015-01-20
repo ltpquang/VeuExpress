@@ -16,6 +16,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    //Delete previous cookies
+    NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (NSHTTPCookie *each in [[cookieStorage cookiesForURL:[NSURL URLWithString:@"http://veuexpress.com/scp/"]] copy] ) {
+        [cookieStorage deleteCookie:each];
+    }
+    
     // Override point for customization after application launch.
     return YES;
 }
