@@ -13,6 +13,10 @@
 #import "PQRequestingService.h"
 #import "PQWebViewViewController.h"
 #import "PQConversationDetailViewController.h"
+#import "PQReplyTicketViewController.h"
+#import "TicketAuthorTableViewCell.h"
+#import "TicketDetailTableViewCell.h"
+#import "TicketThreadTableViewCell.h"
 
 @interface PQTicketDetailViewController ()
 
@@ -20,25 +24,8 @@
 @property (nonatomic) PQRequestingService *requestService;
 @property (strong, nonatomic) IBOutlet UITableView *mainTableView;
 @property (nonatomic) UIRefreshControl *loadingIndicator;
+@property (nonatomic) UIBarButtonItem *replyButton;
 
-@property (weak, nonatomic) IBOutlet UIButton *getInfoButton;
-@property (weak, nonatomic) IBOutlet UIButton *callButton;
-
-@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *userEmailLabel;
-@property (weak, nonatomic) IBOutlet UILabel *userPhoneNumberLabel;
-@property (weak, nonatomic) IBOutlet UILabel *userAddressLabel;
-@property (weak, nonatomic) IBOutlet UILabel *userNoteLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *ticketIdLabel;
-@property (weak, nonatomic) IBOutlet UILabel *ticketStatusLabel;
-@property (weak, nonatomic) IBOutlet UILabel *ticketHelpTopicLabel;
-@property (weak, nonatomic) IBOutlet UILabel *ticketCreateDateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *ticketDueDateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *ticketLastMessageLabel;
-@property (weak, nonatomic) IBOutlet UILabel *ticketLastResponseLabel;
-
-@property (weak, nonatomic) IBOutlet UITextView *firstMessageTextView;
 
 @property (nonatomic) BOOL isLoading;
 @property (nonatomic) NSURL *toPassUrl;
@@ -55,35 +42,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self updateUserDetail];
+    [self configTableView];
     [self updateNavigationBar];
     [self configRefreshControl];
     [self refreshUserDetail];
-    // Do any additional setup after loading the view.
+    [self setupReplyButton];
+}
+
+- (void)configTableView {
+    _mainTableView.rowHeight = UITableViewAutomaticDimension;
+    _mainTableView.estimatedRowHeight = 20.0;
+    _mainTableView.delegate = self;
+    _mainTableView.dataSource = self;
+    _mainTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)updateUserDetail {
-    _userNameLabel.text = _ticket.user.name;
-    _userEmailLabel.text = _ticket.user.email;
-    _userPhoneNumberLabel.text = _ticket.user.phone;
-    _userAddressLabel.text = _ticket.user.address;
-    _userNoteLabel.text = _ticket.user.note;
-    
-    _ticketIdLabel.text = _ticket.orderId;
-    _ticketStatusLabel.text = _ticket.status;
-    _ticketHelpTopicLabel.text = _ticket.helpTopic;
-    _ticketCreateDateLabel.text = _ticket.createDate;
-    _ticketDueDateLabel.text = _ticket.dueDate;
-    _ticketLastMessageLabel.text = _ticket.lastMessage;
-    _ticketLastResponseLabel.text = _ticket.lastResponse;
-    
-    //_firstMessageTextView.attributedText = ((PQThread *)[_ticket.threads objectAtIndex:0]).content;
-    _firstMessageTextView.text = ((PQThread *)[_ticket.threads objectAtIndex:0]).content;
 }
 
 - (void)updateNavigationBar {
@@ -103,33 +79,27 @@
         return;
     }
     _isLoading = YES;
+    [_replyButton setEnabled:NO];
     [_ticket downloadTicketDetailUsingRequestingService:_requestService
                                                 success:^{
-                                                    [self updateUserDetail];
-                                                    [self configOtherControls];
+                                                    _ticket.threads = [[_ticket.threads reverseObjectEnumerator] allObjects];
                                                     [_mainTableView reloadData];
-                                                    //[self enableButtons];
                                                     [self endLoadingUpdate];
+                                                    [_replyButton setEnabled:YES];
                                                 }
                                                 failure:^(NSError *error) {
+                                                    [_replyButton setEnabled:NO];
                                                     [self endLoadingUpdate];
                                                 }];
 }
 
-- (void)configLabelForWordWrapping:(UILabel *)label {
-    label.lineBreakMode = NSLineBreakByWordWrapping;
-    label.numberOfLines = 0;
-    [label sizeToFit];
-}
-
-- (void)configOtherControls {
-    [self configLabelForWordWrapping:_userAddressLabel];
-    [self configLabelForWordWrapping:_userNoteLabel];
-}
-
-- (void)enableButtons {
-    _getInfoButton.hidden = NO;
-    _callButton.hidden = NO;
+- (void)setupReplyButton {
+    _replyButton = [[UIBarButtonItem alloc] initWithTitle:@"Reply"
+                                                    style:UIBarButtonItemStylePlain
+                                                   target:self
+                                                   action:@selector(reply)];
+    [_replyButton setEnabled:NO];
+    self.navigationItem.rightBarButtonItem = _replyButton;
 }
 
 - (void)endLoadingUpdate {
@@ -138,11 +108,8 @@
 }
 
 #pragma mark Outlet actions
-- (IBAction)getInfoButton:(id)sender {
-    NSString *toPaste = [NSString stringWithFormat:@"%@\n%@\n%@",
-                         _ticket.user.name,
-                         _ticket.user.phone,
-                         _ticket.user.address];
+
+- (void)copiedTextToClipboard:(NSString *)toPaste {
     UIPasteboard *pb = [UIPasteboard generalPasteboard];
     [pb setString:toPaste];
     
@@ -154,29 +121,16 @@
     [noti show];
 }
 
-- (IBAction)callButtonTUI:(id)sender {
+- (void)call {
     NSString *number = [[_ticket.user.phone componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]]componentsJoinedByString:@""];
     NSString *phoneNumber = [@"telprompt://" stringByAppendingString:number];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
 }
 
-- (IBAction)copyMessageButtonTUI:(id)sender {
-    NSString *toPaste = _firstMessageTextView.text;
-    UIPasteboard *pb = [UIPasteboard generalPasteboard];
-    [pb setString:toPaste];
-    
-    UIAlertView *noti = [[UIAlertView alloc] initWithTitle:@"Hú"
-                                                   message:@"Đã copy cho sếp"
-                                                  delegate:self
-                                         cancelButtonTitle:@"Ờ"
-                                         otherButtonTitles:nil];
-    [noti show];
+- (void)reply {
+    //NSLog(@"Reply");
+    [self performSegueWithIdentifier:@"GoToReplySegue" sender:self];
 }
-
-- (IBAction)seeFullConversationButtonTUI:(id)sender {
-    [self performSegueWithIdentifier:@"GoToConversationDetailSegue" sender:self];
-}
-
 
 #pragma mark UITextView delegate
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange
@@ -191,6 +145,8 @@
 }
 
 #pragma mark Table view delegate and helpers
+
+
 - (CGFloat)computeUserRowHeight {
     int topPadding = 0;
     int bottomPadding = 0;
@@ -200,16 +156,17 @@
         return 50;
     }
     
-    CGSize nameSize = [user.name sizeWithAttributes:@{NSFontAttributeName:_userNameLabel.font}];
-    CGSize emailSize = [user.email sizeWithAttributes:@{NSFontAttributeName:_userEmailLabel.font}];
-    CGSize phoneSize = [user.phone sizeWithAttributes:@{NSFontAttributeName:_userPhoneNumberLabel.font}];
+    CGSize nameSize = [user.name sizeWithAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:17.0]}];
+    CGSize emailSize = [user.email sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]}];
+    CGSize phoneSize = [user.phone sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]}];
+ 
     CGRect addressSize = [user.address boundingRectWithSize:CGSizeMake(292, MAXFLOAT)
                                                  options:NSStringDrawingUsesLineFragmentOrigin
-                                              attributes:@{NSFontAttributeName:_userAddressLabel.font}
+                                              attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]}
                                                  context:nil];
     CGRect noteSize = [user.note boundingRectWithSize:CGSizeMake(292, MAXFLOAT)
                                               options:NSStringDrawingUsesLineFragmentOrigin
-                                           attributes:@{NSFontAttributeName:_userNoteLabel.font}
+                                           attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.0]}
                                               context:nil];
     return topPadding
     + nameSize.height
@@ -222,15 +179,19 @@
     + bottomPadding;
 }
 
-- (CGFloat)computeFirstMessageRowHeight {
-    PQThread *firstMessage = [_ticket.threads objectAtIndex:0];
-    NSString *messageContentAttString = firstMessage.content;
-    if (messageContentAttString.length == 0) {
+
+- (CGFloat)computeThreadRowHeightForThread:(PQThread *)thread {
+    NSString *messageString = thread.content;
+    if (messageString.length == 0) {
         return 50 + 30;
     }
-    CGRect messageTextViewSize = [messageContentAttString boundingRectWithSize:CGSizeMake(292, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:_firstMessageTextView.font} context:nil];
+    CGRect messageTextViewSize = [messageString boundingRectWithSize:CGSizeMake(292, MAXFLOAT)
+                                                             options:NSStringDrawingUsesLineFragmentOrigin
+                                                          attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.0]}
+                                                             context:nil];
     return messageTextViewSize.size.height + 30 + 30;
 }
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
@@ -250,14 +211,69 @@
         }
     }
     else if (indexPath.section == 2) {
-        if (indexPath.row == 0) {
-            return [self computeFirstMessageRowHeight];
-        }
+        return [self computeThreadRowHeightForThread:[_ticket.threads objectAtIndex:indexPath.row]];
     }
     return _mainTableView.rowHeight;
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 3;
+}
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    switch (section) {
+        case 0:
+            return @"NGƯỜI MUA";
+            break;
+        case 1:
+            return @"ĐƠN HÀNG";
+            break;
+        case 2:
+            return @"CHUYỆN TRÒ LINH TINH™";
+            break;
+    }
+    return @"";
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 2) {
+        return [_ticket.threads count];
+    }
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        NSString *reuseId = @"TicketAuthorCell";
+        TicketAuthorTableViewCell *cell = (TicketAuthorTableViewCell *)[_mainTableView dequeueReusableCellWithIdentifier:reuseId];
+        if (cell == nil) {
+            cell = [[TicketAuthorTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                                       reuseIdentifier:reuseId];
+        }
+        [cell configCellUsingTicket:_ticket
+                        andParentVC:self];
+        return cell;
+    }
+    else if (indexPath.section == 1) {
+        NSString *reuseId = @"TicketDetailCell";
+        TicketDetailTableViewCell *cell = (TicketDetailTableViewCell *)[_mainTableView dequeueReusableCellWithIdentifier:reuseId];
+        if (cell == nil) {
+            cell = [[TicketDetailTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseId];
+        }
+        [cell configTicketUsingLabel:_ticket];
+        return cell;
+    }
+    else {
+        NSString *reuseId = @"TicketThreadCell";
+        TicketThreadTableViewCell *cell =  (TicketThreadTableViewCell *)[_mainTableView dequeueReusableCellWithIdentifier:reuseId];
+        if (cell == nil) {
+            cell = [[TicketThreadTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseId];
+        }
+        [cell configCellUsingThread:[_ticket.threads objectAtIndex:indexPath.row]
+                        andParentVC:self];
+        return cell;
+    }
+}
 
 #pragma mark - Navigation
 
@@ -269,10 +285,10 @@
         PQWebViewViewController *vc = (PQWebViewViewController *)[segue destinationViewController];
         [vc configWebViewUrlWithUrl:_toPassUrl];
     }
-    else if ([[segue identifier] isEqual:@"GoToConversationDetailSegue"]) {
-        PQConversationDetailViewController *vc = (PQConversationDetailViewController *)[segue destinationViewController];
-        [vc configThreads:_ticket.threads
-        andRequestService:[_requestService instanceWithSameCookie]];
+    else if ([[segue identifier] isEqual:@"GoToReplySegue"]) {
+        PQReplyTicketViewController *vc = (PQReplyTicketViewController *)[segue destinationViewController];
+        [vc configUsingTicket:_ticket
+            andRequestService:[_requestService instanceWithSameCookie]];
     }
 }
 

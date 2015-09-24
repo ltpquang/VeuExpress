@@ -27,7 +27,7 @@
     [super viewDidLoad];
     _authService = [[PQAuthenticatingService alloc] init];
     // Do any additional setup after loading the view.
-    [self loginButtonTUI:self];
+    //[self loginButtonTUI:self];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PQReplyTicketViewController : UIViewController
+@class PQTicket;
+@class PQRequestingService;
 
+@interface PQReplyTicketViewController : UITableViewController <UITextViewDelegate>
+- (void)configUsingTicket:(PQTicket *)ticket
+        andRequestService:(PQRequestingService *)requestService;
 @end

@@ -34,6 +34,7 @@
 }
 
 - (void)sendRequest {
+    NSLog(@"%@", _url);
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:_url];
     [_mainWebView loadRequest:request];
 }

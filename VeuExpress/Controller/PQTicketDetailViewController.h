@@ -14,4 +14,6 @@
 @interface PQTicketDetailViewController : UITableViewController <UITextViewDelegate>
 - (void)configUsingTicket:(PQTicket *)ticket
      andRequestingService:(PQRequestingService *)requestService;
+- (void)copiedTextToClipboard:(NSString *)toPaste;
+- (void)call;
 @end

@@ -68,9 +68,9 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     
-    
-    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    [manager.requestSerializer setValue:_cookie forHTTPHeaderField:@"Cookie"];
+    [manager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
+    //manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    //[manager.requestSerializer setValue:_cookie forHTTPHeaderField:@"Cookie"];
     
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];

@@ -11,7 +11,7 @@
 @implementation PQURLService
 
 + (NSString *)homeControlPanelURL {
-    return @"http://veuexpress.com/scp/";
+    return @"http://veuexpress.com/ticket/scp/";
 }
 
 + (NSString *)loginURL {
@@ -81,6 +81,12 @@
 + (NSString *)replyContentURLForTicketId:(NSString *)ticketId {
     //veuexpress.com/scp/ajax.php/tickets/263/canned-resp/2.json
     NSString *result = [NSString stringWithFormat:@"%@ajax.php/tickets/%@/canned-resp/2.json", [self homeControlPanelURL], ticketId];
+    return result;
+}
+
++ (NSString *)draftIdURLForTicketId:(NSString *)ticketId {
+    //veuexpress.com/scp/ajax.php/draft/ticket.response.297
+    NSString *result = [NSString stringWithFormat:@"%@ajax.php/draft/ticket.response.%@", [self homeControlPanelURL], ticketId];
     return result;
 }
 

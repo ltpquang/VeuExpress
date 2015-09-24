@@ -74,6 +74,20 @@
     return result.length == 0 ? @"------" : result;
 }
 
++ (NSString *)retrieveTicketCsrfTokenFromHtml:(TFHpple *)parser {
+    NSString *xPath = @"//meta[@name='csrf_token']";
+    TFHppleElement *metaNode = [[parser searchWithXPathQuery:xPath] firstObject];
+    NSString *result = [[metaNode attributes] objectForKey:@"content"];
+    return result;
+}
+
++ (NSString *)retrieveTicketMsgIdFromHtml:(TFHpple *)parser {
+    NSString *xPath = @"//input[@name='msgId']";
+    TFHppleElement *inputNode = [[parser searchWithXPathQuery:xPath] firstObject];
+    NSString *result = [[inputNode attributes] objectForKey:@"value"];
+    return result;
+}
+
 + (NSString *)retrieveThreadAuthorFromtableNode:(TFHppleElement *)tableNode {
     NSString *xPath = @"//span[@class='pull-right']/span[2]";
     TFHppleElement *spanWithContent = [[tableNode searchWithXPathQuery:xPath] firstObject];
@@ -139,6 +153,8 @@
                                        andDueDate:[self retrieveTicketDueDateFromHtml:htmlParser]
                                    andLastMessage:[self retrieveTicketLastMessageFromHtml:htmlParser]
                                   andLastResponse:[self retrieveTicketLastResponseFromHtml:htmlParser]
+                                     andCsrfToken:[self retrieveTicketCsrfTokenFromHtml:htmlParser]
+                                         andMsgId:[self retrieveTicketMsgIdFromHtml:htmlParser]
                                        andThreads:[self retrieveTicketThreadListFromHtml:htmlParser]
                                           andUser:nil];
 }
@@ -160,7 +176,7 @@
 }
 
 + (NSString *)retrieveCustomInfoAtRow:(NSUInteger)row fromHtml:(TFHpple *)parser {
-    NSString *xPath = [NSString stringWithFormat:@"//*[@id='info-tab']/table/tr[%i]/td[2]", row+2];//1 for header row, 1 for 1-based xpath indexing
+    NSString *xPath = [NSString stringWithFormat:@"//*[@id='info-tab']/table/tr[%lu]/td[2]", row+2];//1 for header row, 1 for 1-based xpath indexing
     TFHppleElement *tdNode = [[parser searchWithXPathQuery:xPath] firstObject];
     NSString *result = [[[tdNode children] firstObject] content];
     return result;

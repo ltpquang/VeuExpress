@@ -16,6 +16,7 @@
 		6F574A071A2C2D3B003FF8EF /* PQParsingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F574A061A2C2D3B003FF8EF /* PQParsingService.m */; };
 		6F592F201A2A518000569033 /* PQLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F592F1F1A2A518000569033 /* PQLoginViewController.m */; };
 		6F725FBC1A659FA70021A228 /* PQTicketDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F725FBB1A659FA70021A228 /* PQTicketDetailViewController.m */; };
+		6F74E7981A6E5CAB00EC390E /* TicketThreadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F74E7971A6E5CAB00EC390E /* TicketThreadTableViewCell.m */; };
 		6F9E9F631A6A56E400EA57B0 /* PQWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9E9F621A6A56E400EA57B0 /* PQWebViewViewController.m */; };
 		6FA712511A275C4D00D97F7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA712501A275C4D00D97F7D /* main.m */; };
 		6FA712541A275C4D00D97F7D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA712531A275C4D00D97F7D /* AppDelegate.m */; };
@@ -32,8 +33,9 @@
 		6FB1F4561A285976009763EC /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB1F4541A285976009763EC /* libxml2.dylib */; };
 		6FCC04791A5ABD3A007D321E /* PQTicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCC04781A5ABD3A007D321E /* PQTicketCell.m */; };
 		6FD69E8E1A6B4EBE0066A908 /* PQConversationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD69E8D1A6B4EBD0066A908 /* PQConversationDetailViewController.m */; };
-		6FD69E911A6B51620066A908 /* PQThreadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FD69E901A6B51620066A908 /* PQThreadTableViewCell.xib */; };
 		6FD69E941A6B52CC0066A908 /* PQThreadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD69E931A6B52CC0066A908 /* PQThreadTableViewCell.m */; };
+		6FF344251A6E26210057E242 /* TicketAuthorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF344241A6E26210057E242 /* TicketAuthorTableViewCell.m */; };
+		6FF344281A6E26460057E242 /* TicketDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF344271A6E26460057E242 /* TicketDetailTableViewCell.m */; };
 		6FF7AD3E1A2DBEF600F35375 /* PQTicketTableViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF7AD3D1A2DBEF600F35375 /* PQTicketTableViewViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 		6F592F1F1A2A518000569033 /* PQLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQLoginViewController.m; path = Controller/PQLoginViewController.m; sourceTree = "<group>"; };
 		6F725FBA1A659FA70021A228 /* PQTicketDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQTicketDetailViewController.h; path = Controller/PQTicketDetailViewController.h; sourceTree = "<group>"; };
 		6F725FBB1A659FA70021A228 /* PQTicketDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQTicketDetailViewController.m; path = Controller/PQTicketDetailViewController.m; sourceTree = "<group>"; };
+		6F74E7961A6E5CAB00EC390E /* TicketThreadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TicketThreadTableViewCell.h; path = Controller/TicketDetailCells/TicketThreadTableViewCell.h; sourceTree = "<group>"; };
+		6F74E7971A6E5CAB00EC390E /* TicketThreadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TicketThreadTableViewCell.m; path = Controller/TicketDetailCells/TicketThreadTableViewCell.m; sourceTree = "<group>"; };
 		6F80B4001A59A240002E1C9E /* TicketViewTypeEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TicketViewTypeEnum.h; path = Model/TicketViewTypeEnum.h; sourceTree = "<group>"; };
 		6F9E9F611A6A56E400EA57B0 /* PQWebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQWebViewViewController.h; path = Controller/PQWebViewViewController.h; sourceTree = "<group>"; };
 		6F9E9F621A6A56E400EA57B0 /* PQWebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQWebViewViewController.m; path = Controller/PQWebViewViewController.m; sourceTree = "<group>"; };
@@ -98,9 +102,12 @@
 		6FCC04781A5ABD3A007D321E /* PQTicketCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQTicketCell.m; path = Controller/PQTicketCell.m; sourceTree = "<group>"; };
 		6FD69E8C1A6B4EBD0066A908 /* PQConversationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQConversationDetailViewController.h; path = Controller/PQConversationDetailViewController.h; sourceTree = "<group>"; };
 		6FD69E8D1A6B4EBD0066A908 /* PQConversationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQConversationDetailViewController.m; path = Controller/PQConversationDetailViewController.m; sourceTree = "<group>"; };
-		6FD69E901A6B51620066A908 /* PQThreadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PQThreadTableViewCell.xib; path = View/PQThreadTableViewCell.xib; sourceTree = "<group>"; };
 		6FD69E921A6B52CC0066A908 /* PQThreadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQThreadTableViewCell.h; path = Controller/PQThreadTableViewCell.h; sourceTree = "<group>"; };
 		6FD69E931A6B52CC0066A908 /* PQThreadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQThreadTableViewCell.m; path = Controller/PQThreadTableViewCell.m; sourceTree = "<group>"; };
+		6FF344231A6E26210057E242 /* TicketAuthorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TicketAuthorTableViewCell.h; path = Controller/TicketDetailCells/TicketAuthorTableViewCell.h; sourceTree = "<group>"; };
+		6FF344241A6E26210057E242 /* TicketAuthorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TicketAuthorTableViewCell.m; path = Controller/TicketDetailCells/TicketAuthorTableViewCell.m; sourceTree = "<group>"; };
+		6FF344261A6E26460057E242 /* TicketDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TicketDetailTableViewCell.h; path = Controller/TicketDetailCells/TicketDetailTableViewCell.h; sourceTree = "<group>"; };
+		6FF344271A6E26460057E242 /* TicketDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TicketDetailTableViewCell.m; path = Controller/TicketDetailCells/TicketDetailTableViewCell.m; sourceTree = "<group>"; };
 		6FF7AD3C1A2DBEF600F35375 /* PQTicketTableViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PQTicketTableViewViewController.h; path = Controller/PQTicketTableViewViewController.h; sourceTree = "<group>"; };
 		6FF7AD3D1A2DBEF600F35375 /* PQTicketTableViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PQTicketTableViewViewController.m; path = Controller/PQTicketTableViewViewController.m; sourceTree = "<group>"; };
 		9E0F22BBAFE1753A1D34B838 /* Pods-VeuExpress.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeuExpress.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VeuExpress/Pods-VeuExpress.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,16 +146,25 @@
 				6FCC04781A5ABD3A007D321E /* PQTicketCell.m */,
 				6F725FBA1A659FA70021A228 /* PQTicketDetailViewController.h */,
 				6F725FBB1A659FA70021A228 /* PQTicketDetailViewController.m */,
+				6FF344221A6E25DE0057E242 /* TicketDetailCells */,
 				6F9E9F611A6A56E400EA57B0 /* PQWebViewViewController.h */,
 				6F9E9F621A6A56E400EA57B0 /* PQWebViewViewController.m */,
+				6F3CB85E1A6E015D005812D5 /* PQReplyTicketViewController.h */,
+				6F3CB85F1A6E015D005812D5 /* PQReplyTicketViewController.m */,
+				6F70FB781A7E9BE300925952 /* Dump */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		6F70FB781A7E9BE300925952 /* Dump */ = {
+			isa = PBXGroup;
+			children = (
 				6FD69E8C1A6B4EBD0066A908 /* PQConversationDetailViewController.h */,
 				6FD69E8D1A6B4EBD0066A908 /* PQConversationDetailViewController.m */,
 				6FD69E921A6B52CC0066A908 /* PQThreadTableViewCell.h */,
 				6FD69E931A6B52CC0066A908 /* PQThreadTableViewCell.m */,
-				6F3CB85E1A6E015D005812D5 /* PQReplyTicketViewController.h */,
-				6F3CB85F1A6E015D005812D5 /* PQReplyTicketViewController.m */,
 			);
-			name = Controller;
+			name = Dump;
 			sourceTree = "<group>";
 		};
 		6FA712421A275C4D00D97F7D = {
@@ -251,9 +267,21 @@
 			isa = PBXGroup;
 			children = (
 				6FA712581A275C4D00D97F7D /* Main.storyboard */,
-				6FD69E901A6B51620066A908 /* PQThreadTableViewCell.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		6FF344221A6E25DE0057E242 /* TicketDetailCells */ = {
+			isa = PBXGroup;
+			children = (
+				6FF344231A6E26210057E242 /* TicketAuthorTableViewCell.h */,
+				6FF344241A6E26210057E242 /* TicketAuthorTableViewCell.m */,
+				6FF344261A6E26460057E242 /* TicketDetailTableViewCell.h */,
+				6FF344271A6E26460057E242 /* TicketDetailTableViewCell.m */,
+				6F74E7961A6E5CAB00EC390E /* TicketThreadTableViewCell.h */,
+				6F74E7971A6E5CAB00EC390E /* TicketThreadTableViewCell.m */,
+			);
+			name = TicketDetailCells;
 			sourceTree = "<group>";
 		};
 		96A59494EF2EE0D3B354A71C /* Pods */ = {
@@ -322,7 +350,7 @@
 		6FA712431A275C4D00D97F7D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Le Thai Phuc Quang";
 				TargetAttributes = {
 					6FA7124A1A275C4D00D97F7D = {
@@ -359,7 +387,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FD69E911A6B51620066A908 /* PQThreadTableViewCell.xib in Resources */,
 				6FA7125A1A275C4D00D97F7D /* Main.storyboard in Resources */,
 				6FA7125F1A275C4D00D97F7D /* LaunchScreen.xib in Resources */,
 				6FA7125C1A275C4D00D97F7D /* Images.xcassets in Resources */,
@@ -425,12 +452,15 @@
 				6FB1F4501A2858E2009763EC /* TFHpple.m in Sources */,
 				6FCC04791A5ABD3A007D321E /* PQTicketCell.m in Sources */,
 				6F9E9F631A6A56E400EA57B0 /* PQWebViewViewController.m in Sources */,
+				6FF344281A6E26460057E242 /* TicketDetailTableViewCell.m in Sources */,
+				6F74E7981A6E5CAB00EC390E /* TicketThreadTableViewCell.m in Sources */,
 				6F574A041A2C2A9E003FF8EF /* PQRequestingService.m in Sources */,
 				6FA712511A275C4D00D97F7D /* main.m in Sources */,
 				6F574A071A2C2D3B003FF8EF /* PQParsingService.m in Sources */,
 				6FD69E941A6B52CC0066A908 /* PQThreadTableViewCell.m in Sources */,
 				6F592F201A2A518000569033 /* PQLoginViewController.m in Sources */,
 				6FB1F4481A285518009763EC /* PQURLService.m in Sources */,
+				6FF344251A6E26210057E242 /* TicketAuthorTableViewCell.m in Sources */,
 				6F725FBC1A659FA70021A228 /* PQTicketDetailViewController.m in Sources */,
 				6FB1F43E1A2851F6009763EC /* PQTicket.m in Sources */,
 				6F3E42021A2B8A8800D13674 /* PQTicketListViewController.m in Sources */,
@@ -495,6 +525,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -567,6 +598,7 @@
 				);
 				INFOPLIST_FILE = VeuExpress/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.quangltp.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -586,6 +618,7 @@
 				);
 				INFOPLIST_FILE = VeuExpress/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.quangltp.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -605,6 +638,7 @@
 				);
 				INFOPLIST_FILE = VeuExpressTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.quangltp.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VeuExpress.app/VeuExpress";
 			};
@@ -620,6 +654,7 @@
 				);
 				INFOPLIST_FILE = VeuExpressTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.quangltp.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VeuExpress.app/VeuExpress";
 			};

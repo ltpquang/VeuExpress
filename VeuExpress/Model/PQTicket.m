@@ -39,6 +39,8 @@
                 andDueDate:(NSString *)dueDate
             andLastMessage:(NSString *)lastMessage
            andLastResponse:(NSString *)lastResponse
+              andCsrfToken:(NSString *)csrfToken
+                  andMsgId:(NSString *)msgId
                 andThreads:(NSArray *)threads
                    andUser:(PQUser *)user {
     if (self = [super init]) {
@@ -49,6 +51,8 @@
         _dueDate = dueDate;
         _lastMessage = lastMessage;
         _lastResponse = lastResponse;
+        _csrfToken = csrfToken;
+        _msgId = msgId;
         _user = user;
         _threads = threads;
     }
@@ -79,6 +83,28 @@
     _dueDate = ticket.dueDate;
     _lastMessage  = ticket.lastMessage;
     _lastResponse = ticket.lastResponse;
+    _csrfToken = ticket.csrfToken;
+    _msgId = ticket.msgId;
 }
 
+- (void)postReplyWithMessage:(NSString *)messageContent
+      usingRequestingService:(PQRequestingService *)requestService
+                     success:(void(^)())successCall
+                     failure:(void(^)(NSError *))failureCall {
+    [requestService downloadTicketDraftIdWithTicket:self
+                                              success:^(NSString *resultDraftId) {
+                                                  _draftId = resultDraftId;
+                                                  [requestService postReplyForTicketWithTicket:self
+                                                                                   withMessage:messageContent
+                                                                                       success:^{
+                                                                                           successCall();
+                                                                                       }
+                                                                                       failure:^(NSError *error) {
+                                                                                           failureCall(error);
+                                                                                       }];
+                                              }
+                                              failure:^(NSError *error) {
+                                                  failureCall(error);
+                                              }];
+}
 @end

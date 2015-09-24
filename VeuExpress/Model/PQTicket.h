@@ -26,6 +26,9 @@
 @property (nonatomic) NSString *dueDate;
 @property (nonatomic) NSString *lastMessage;
 @property (nonatomic) NSString *lastResponse;
+@property (nonatomic) NSString *csrfToken;
+@property (nonatomic) NSString *msgId;
+@property (nonatomic) NSString *draftId;
 
 - (id)initWithTicketId:(NSString *)ticketId
             andOrderId:(NSString *)orderId
@@ -40,6 +43,8 @@
                 andDueDate:(NSString *)dueDate
             andLastMessage:(NSString *)lastMessage
            andLastResponse:(NSString *)lastResponse
+              andCsrfToken:(NSString *)csrfToken
+                  andMsgId:(NSString *)msgId
                 andThreads:(NSArray *)threads
                    andUser:(PQUser *)user;
 
@@ -47,5 +52,8 @@
                                            success:(void(^)())successCall
                                            failure:(void(^)(NSError *error))failureCall;
 
-
+- (void)postReplyWithMessage:(NSString *)messageContent
+      usingRequestingService:(PQRequestingService *)requestService
+                     success:(void(^)())successCall
+                     failure:(void(^)(NSError *))failureCall;
 @end

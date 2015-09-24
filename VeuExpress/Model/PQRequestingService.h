@@ -25,4 +25,14 @@
 - (void)downloadTicketDetailWithTicketId:(NSString *)ticketId
                                  success:(void(^)(PQTicket *resultTicket))successCall
                                  failure:(void(^)(NSError *error))failureCall;
+- (void)downloadTicketReplyContentWithTicketId:(NSString *)ticketId
+                                       success:(void(^)(NSString *resultContent))successCall
+                                       failure:(void(^)(NSError *error))failureCall;
+- (void)downloadTicketDraftIdWithTicket:(PQTicket *)ticket
+                                 success:(void(^)(NSString *resultDraftId))successcall
+                                 failure:(void(^)(NSError *error))failureCall;
+- (void)postReplyForTicketWithTicket:(PQTicket *)ticket
+                         withMessage:(NSString *)message
+                             success:(void(^)())successCall
+                             failure:(void(^)(NSError *))failureCall;
 @end

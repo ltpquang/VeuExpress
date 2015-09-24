@@ -19,7 +19,7 @@
 @property (nonatomic) UIRefreshControl *loadingIndicator;
 @property (nonatomic) UIActivityIndicatorView *loadMoreIndicator;
 @property (nonatomic) BOOL isLoading;
-@property (nonatomic) int selectedTicketIndex;
+@property (nonatomic) NSInteger selectedTicketIndex;
 @end
 
 @implementation PQTicketTableViewViewController
