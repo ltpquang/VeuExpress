@@ -82,6 +82,12 @@
           }];
 }
 
+- (void)downloadTicketForSearchTerm:(NSString *)searchTerm
+                            success:(void(^)(NSArray *resultArray))successCall
+                            failure:(void(^)(NSError *error))failureCall {
+    
+}
+
 - (void)downloadTicketDetailWithTicketId:(NSString *)ticketId
                                  success:(void(^)(PQTicket *resultTicket))successCall
                                  failure:(void(^)(NSError *error))failureCall {

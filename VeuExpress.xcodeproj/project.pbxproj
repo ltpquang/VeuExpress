@@ -316,6 +316,7 @@
 				6FA712481A275C4D00D97F7D /* Frameworks */,
 				6FA712491A275C4D00D97F7D /* Resources */,
 				07435B610940F2C004DEA604 /* Copy Pods Resources */,
+				6FF9DA0B1BB3B3AD00183C3C /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -417,6 +418,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VeuExpress/Pods-VeuExpress-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		6FF9DA0B1BB3B3AD00183C3C /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/Fabric.framework/run\" de5f363780638267344471c685c2fc69d92f3198 73cc874c7a4bacc87d433bd4b48d8751592af630ac57eebfdab13749210b4eac";
 		};
 		CD06E1B0A5E43F5B88DBE713 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

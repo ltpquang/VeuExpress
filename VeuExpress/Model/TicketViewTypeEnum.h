@@ -17,5 +17,6 @@ typedef enum : NSUInteger {
     TicketTypeAnswered,
     TicketTypeAssigned,
     TicketTypeOverdue,
-    TicketTypeClosed
+    TicketTypeClosed,
+    TicketTypeSearch
 } TicketTypeEnum;

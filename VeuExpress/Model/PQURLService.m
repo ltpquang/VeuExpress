@@ -7,6 +7,7 @@
 //
 
 #import "PQURLService.h"
+#import "AppDelegate.h"
 
 @implementation PQURLService
 
@@ -36,6 +37,8 @@
             break;
         case TicketTypeClosed:
             urlWithoutPage = [self closedTicketsURL];
+            break;
+        default:
             break;
     }
     return [NSString stringWithFormat:@"%@&p=%i", urlWithoutPage, page];
@@ -87,6 +90,18 @@
 + (NSString *)draftIdURLForTicketId:(NSString *)ticketId {
     //veuexpress.com/scp/ajax.php/draft/ticket.response.297
     NSString *result = [NSString stringWithFormat:@"%@ajax.php/draft/ticket.response.%@", [self homeControlPanelURL], ticketId];
+    return result;
+}
+
++ (NSString *)searchURLForSearchTerm:(NSString *)searchTerm {
+    NSString *csrf = [(AppDelegate *)[[UIApplication sharedApplication] delegate] csrfToken];
+    //veuexpress.com/ticket/scp/tickets.php?__CSRFToken__=7de2bf03cbaade8ad7ef6ec214a361790a98b08a&a=search&query=test+th%E1%BB%AD&basic_search=Search
+    searchTerm = [searchTerm stringByReplacingOccurrencesOfString:@" "
+                                                       withString:@"+"];
+    NSString *result = [NSString stringWithFormat:@"%@tickets.php?__CSRFToken__=%@&a=search&query=%@&basic_search=Search",
+                        [self homeControlPanelURL],
+                        csrf,
+                        searchTerm];
     return result;
 }
 

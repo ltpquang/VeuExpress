@@ -17,4 +17,5 @@
 + (NSString *)userURLForTicketId:(NSString *)ticketId;
 + (NSString *)replyContentURLForTicketId:(NSString *)ticketId;
 + (NSString *)draftIdURLForTicketId:(NSString *)ticketId;
++ (NSString *)searchURLForSearchTerm:(NSString *)searchTerm;
 @end

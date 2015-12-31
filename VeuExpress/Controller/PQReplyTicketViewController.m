@@ -136,11 +136,12 @@
 
 - (void)postMessage {
     [self configViewBeforePosting];
-    NSString *message = [[NSString alloc] init];
+    NSString *message;// = [[NSString alloc] init];
     if ([_useTemplateSwitch isOn]) {
         NSString *price = _priceTextField.text;
         self.replyTemplate = [self.replyTemplate stringByReplacingOccurrencesOfString:@"###"
                                                             withString:price];
+        message = self.replyTemplate;
     }
     else {
         message = _messageTextView.text;

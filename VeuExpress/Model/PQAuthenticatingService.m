@@ -11,6 +11,7 @@
 #import <AFNetworking.h>
 #import "PQURLService.h"
 #import "PQParsingService.h"
+#import "AppDelegate.h"
 
 @interface PQAuthenticatingService()
 
@@ -87,6 +88,7 @@
                                                       encoding:NSUTF8StringEncoding];
          NSData *htmlData = [htmlString dataUsingEncoding:NSUTF8StringEncoding];
          NSString *csrfToken = [PQParsingService parseLoginPageAndRetrieveCSRFTokenWithData:htmlData];
+         [(AppDelegate *)[[UIApplication sharedApplication] delegate] setCsrfToken:csrfToken];
          [self sendLoginCredentialUsingCSRFToken:csrfToken
                                          success:successCall
                                          failure:failureCall];
@@ -106,7 +108,7 @@
     _userid = userid;
     _passwd = passwd;
     
-    [self firstGetAndRetrieveCSRFTokenFromURL:[PQURLService homeControlPanelURL]
+    [self firstGetAndRetrieveCSRFTokenFromURL:[PQURLService loginURL]
                                       success:successCall
                                       failure:failureCall];
 }

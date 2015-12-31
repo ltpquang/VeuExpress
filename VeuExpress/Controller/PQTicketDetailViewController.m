@@ -139,7 +139,8 @@
     //NSLog(@"handle url");
     _toPassUrl = URL;
     
-    [self performSegueWithIdentifier:@"OpenWebViewSegue" sender:self];
+    //[self performSegueWithIdentifier:@"OpenWebViewSegue" sender:self];
+    [[UIApplication sharedApplication] openURL:URL];
     
     return NO;
 }
